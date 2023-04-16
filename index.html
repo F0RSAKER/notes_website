@@ -1,0 +1,185 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+  <h1 class="head">NOTES</h1>
+  <hr>
+  
+  <div class="note">
+    <img class="doodles" src="C:\Users\Evelyn\Documents\html\doodle.png" >
+    <a><button class="add_button" onclick="addNote()">add note:</button></a>
+    <input class="note_input" id="note_input" type="text" style="width:60%" />
+    
+    <div class="added_Notes" id="notes_list"></div>
+  </div>
+
+  <hr>
+  <p style="color:aliceblue">&#169; 2023 | Evelyn Iks | No Rights Reserved. </p>
+  
+  <style>
+
+    body {
+      background-image: url('https://i.pinimg.com/564x/85/cd/f3/85cdf365332c839c796bdf3dbdb3d7eb.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+
+    }
+
+
+    .head {
+      background-image: url();
+      
+      
+      margin-left: 50%;
+      margin-top: 18px;
+
+      font-size: 50px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: aliceblue;
+
+
+      }
+
+    .note {
+      position: relative;
+      margin-inline: calc(100% - 65%);
+      
+      background-image: url(https://i.pinimg.com/564x/a9/ac/b3/a9acb33abfa8ad2526afd055628853d6.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      
+      height: 900px;
+      width: 700px;
+      
+      }
+
+      .doodles {
+        position: absolute;
+        width: 120px;
+        height: 900px;
+
+      }
+
+      .add_button {
+        border: 2px solid rgb(44, 24, 43) ;
+        border-radius: 2px;
+
+        position: absolute;
+        margin-left: calc((100% - 50%) - 245px);
+        margin-top: 20px;
+
+        padding-inline: 20px;
+        padding-block: 7px;
+
+        font-size: 17px;
+        font-family: Calibri;
+
+        background-color: rgb(196, 190, 202);
+
+        transition: 0.6s;
+
+      } 
+      
+      .add_button:hover {
+        background-color: rgb(151, 142, 160);
+
+      }
+
+      .note_input {
+        position: absolute;
+        margin-left: calc((100% - 50%) - 130px);
+        margin-top: 20px;
+
+        padding-inline: 11px;
+        padding-block: 7px;
+
+
+        border: 2px solid rgb(44, 24, 43);
+        border-radius: 2px;
+
+        font-family: Calibri;
+        font-size: 17px;
+
+      }
+
+      .added_Notes {
+        font-size: 25px;
+        font-family: Calibri;
+        color: rgba(13, 13, 85, 0.87);
+
+        position: absolute;
+        margin-left: calc((100% - 50%) - 240px);
+        margin-top: 60px;
+
+        padding-left: 5%;
+        padding-top: 15px;
+
+      }
+
+  </style>
+
+  <script>
+
+    let note = [];
+    note.style = "margin-left: -10px"
+    
+    render();
+    
+    //adds the input from textbox into let note
+    function addNote() {
+        
+        let textbox = document.getElementById("note_input");
+        let title = textbox.value;
+        
+        const id = new Date().getTime();
+
+        note.push(title);
+
+        
+        render();
+    }
+
+    function delete_Note() {
+      alert("")
+
+
+    }
+    
+    
+    
+    function render() {
+      //reset array
+        document.getElementById("notes_list").innerHTML = "";
+
+
+      //adds a div element in html
+        note.forEach(function (notesTitle) {
+            let element = document.createElement("div");
+            element.innerHTML = "&bull; " + notesTitle;
+            element.style = "margin-top: 20px;"
+            
+            let delete_button = document.createElement("button");
+            delete_button.innerHTML = "X";
+            delete_button.style = "margin-left: -60px; margin-top: 7px; position: absolute;";
+            delete_button.onclick = delete_Note;
+            delete_button.id = note.id;
+            element.appendChild(delete_button);
+            
+            let noteList = document.getElementById("notes_list");
+            noteList.appendChild(element);
+
+            
+        });
+    }
+
+  </script>
+
+</body>
+
+</html>
