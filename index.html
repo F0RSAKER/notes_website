@@ -126,29 +126,40 @@
 
   <script>
 
+
+
     let note = [];
-    note.style = "margin-left: -10px"
+    //0:(id: 0, title: Taras), 1:(id: 1, title: Evelyn),
+    //note.style = "margin-left: -10px"
     
     render();
     
+    let unique_id = 0;
+
     //adds the input from textbox into let note
     function addNote() {
         
         let textbox = document.getElementById("note_input");
-        let title = textbox.value;
-        
-        const id = new Date().getTime();
+        let title_n = textbox.value;
 
-        note.push(title);
+        
+        //textbox.setAttribute("id", id);
+        //<img href="" id = 1>
+        note.push({
+          id: unique_id++,
+          title: title_n,
+        });
 
         
         render();
     }
 
-    function delete_Note() {
-      alert("")
+    
 
+    function delete_Note(delete_id) {
+      delete note[delete_id];
 
+      render();
     }
     
     
@@ -161,14 +172,14 @@
       //adds a div element in html
         note.forEach(function (notesTitle) {
             let element = document.createElement("div");
-            element.innerHTML = "&bull; " + notesTitle;
+            element.innerHTML = "&bull; " + notesTitle.title;
             element.style = "margin-top: 20px;"
             
             let delete_button = document.createElement("button");
             delete_button.innerHTML = "X";
-            delete_button.style = "margin-left: -60px; margin-top: 7px; position: absolute;";
-            delete_button.onclick = delete_Note;
-            delete_button.id = note.id;
+            //delete_button.style = "margin-left: -60px; margin-top: 7px; position: absolute;";
+            delete_button.onclick = function (){delete_Note(notesTitle.id)}
+            delete_button.id = notesTitle.id;
             element.appendChild(delete_button);
             
             let noteList = document.getElementById("notes_list");
