@@ -6,7 +6,7 @@
 
 <body>
 
-  <h1 class="head">NOTES</h1>
+  <h1 class="head" id="headline"></h1>
   <hr>
   
   <div class="note">
@@ -205,8 +205,15 @@
         });
     }
 
-  
-
+    let head;
+    let head_input = prompt("Name:")
+    if (head_input == null || head_input == "") {
+    text = "User cancelled the prompt.";
+    } else {
+    head = head_input + "'s Notes";
+    }
+    document.getElementById("headline").innerHTML = head;
+    
   </script>
 
 </body>
