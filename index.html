@@ -153,7 +153,11 @@
         
         let textbox = document.getElementById("note_input");
         let title_n = textbox.value;
-
+        
+        if (title_n == 0) {
+          render() = false;
+        }
+        
         note.push({
           id: unique_id++,
           title: title_n,
@@ -200,6 +204,8 @@
             
         });
     }
+
+  
 
   </script>
 
