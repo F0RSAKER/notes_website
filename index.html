@@ -11,14 +11,15 @@
     
   <hr>
   
-  <div class="note">
-    
-    <a><button class="add_button" onclick="addNote()">add note:</button></a>
-    <input class="note_input" id="note_input" type="text" style="width:60%" />
-    
-    <div class="added_Notes" id="notes_list"></div>
-  </div>
-
+  <div class="note_bg">
+    <div class="note">
+      
+      <a><button class="add_button" onclick="addNote()">add note:</button></a>
+      <input class="note_input" id="note_input" type="text" style="width:60%" />
+      
+      <div class="added_Notes" id="notes_list"></div>
+    </div>
+  </div>  
   <hr>
   <p style="color:aliceblue">&#169; 2023 | Evelyn Iks | No Rights Reserved. </p>
   
@@ -38,8 +39,9 @@
     .head {
       background-image: url();
       
-      margin-left: 50%;
-      margin-top: 0px;
+      
+
+      text-align: center;
 
       padding-top: 15px;
       font-size: 50px;
@@ -66,17 +68,18 @@
       
     }
 
+
+
     .note {
       position: relative;
-      margin-inline: calc(100% - 65%);
+      margin: auto;
+      
+      height: 900px;
+      width: 700px;
       
       background-image: url(https://i.pinimg.com/564x/a9/ac/b3/a9acb33abfa8ad2526afd055628853d6.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-      
-      
-      height: 900px;
-      width: 700px;
       
       }
 
