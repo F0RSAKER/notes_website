@@ -10,12 +10,22 @@
   </div>
     
   <hr>
-  
+    
+    <div class="bg_operation_panel">
+      <button class="new_note">new note document</button>
+      <button class="refresh_note">refresh note</button>
+      <button class="save_note">save note document</button>
+    </div>
+    
+
+  <hr>
   
     <div class="note">
       
+      
       <a><button class="add_button" onclick="addNote()">add note:</button></a>
       <input class="note_input" id="note_input" type="text" style="width:60%" />
+      
       
       <div class="added_Notes" id="notes_list"></div>
     </div>
@@ -55,6 +65,7 @@
     .head_bg {
       position: relative;
       height: 100px;
+      width: 100%;
       
       
       top: 0px;
@@ -65,8 +76,82 @@
       border-bottom: 0px;
       border-top: 1px dashed rgba(203, 202, 255, 0.61);
       height: 1px;
+      margin: 1px;
       
     }
+
+    .bg_operation_panel {
+      position: relative;
+      margin: auto;
+      height: 35px;
+      background-color: rgb(24, 24, 44);
+      
+    }
+    
+      .new_note {
+        width:33%;
+        margin-left: 0.2%;
+        height: 100%;
+
+        border: 0px;
+
+        background-color: rgb(24, 24, 44) ;
+
+        color: aliceblue;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Calibri;
+
+        transition: 0.5s;
+        }
+
+        .new_note:hover {
+          background-color: rgb(25, 25, 73);
+
+        }
+
+
+      .refresh_note {
+        width:33%;
+        height: 100%;
+
+        border: 0px;
+
+        background-color: rgb(24, 24, 44) ;
+
+        color: aliceblue;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Calibri;
+        
+        transition: 0.5s;
+        }
+
+        .refresh_note:hover {
+          background-color: rgb(25, 25, 73);
+
+        }
+        
+      .save_note {
+        width:33%;
+        height: 100%;
+        
+        border: 0px;
+
+        background-color: rgb(24, 24, 44) ;
+
+        color: aliceblue;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Calibri;
+        
+        transition: 0.5s;
+        }
+
+        .save_note:hover {
+          background-color: rgb(25, 25, 73);
+
+        }
 
 
 
@@ -160,6 +245,9 @@
 
       }
 
+      .new_note {
+        
+      }
 
   </style>
 
@@ -169,7 +257,6 @@
 //_____________________________________________________________________________________
     let note = [];
     //0:(id: 0, title: Taras), 1:(id: 1, title: Evelyn),
-    //note.style = "margin-left: -10px"
     
     render();
     
