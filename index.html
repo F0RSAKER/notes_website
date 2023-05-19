@@ -6,7 +6,8 @@
 
 <body>
   <div class="head_bg">
-    <h1 class="head" id="headline"></h1>
+    <button class="add_name" onclick="name_notes()">Add Name</button>
+    <h1 class="head" id="headline">Notes</h1>
   </div>
     
   <hr>
@@ -45,7 +46,33 @@
 
     }
 
+    .add_name {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
 
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      border: 0px;
+
+      background-color: rgb(24, 24, 44) ;
+
+      color: aliceblue;
+      font-size: 17px;
+      font-weight: bold;
+      font-family: Calibri;
+      
+      
+
+    }
+    
+    
     .head {
       background-image: url();
       
@@ -322,6 +349,8 @@
 
 //_____________________________________________________________________________________            
     // "Your Name"'s Notes
+    
+    function name_notes() {
     let head;
     let head_input = prompt("Name:");
     head_input = head_input.charAt(0).toUpperCase()  + head_input.slice(1);
@@ -331,6 +360,7 @@
       head = head_input + "'s Notes";
     }
     document.getElementById("headline").innerHTML = head;
+    }
     
       
     
